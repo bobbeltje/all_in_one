@@ -1,0 +1,31 @@
+
+
+<MainMenu>:
+    GridLayout:
+        cols: 2
+        Button:
+            on_press:
+                root.clicking()
+            on_release:
+                root.manager.current = 'screen2'
+            id: button1
+            text: 'Go to screen 2'
+            font_size: 35
+        Button:
+            on_release:
+                root.answerLeft(root.answer1)
+            id: answer1
+            text: 'button'
+            font_size: 35
+        Button:
+            on_release:
+                root.answerLeft(root.answer2)
+            id: answer2
+            text: 'button2'
+            font_size: 35
+        Button:
+            on_release:
+                root.answerLeft(root.answer3)
+            id: answer3
+            text: 'button3'
+            font_size: 35
