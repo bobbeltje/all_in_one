@@ -1,0 +1,69 @@
+#:kivy 1.9
+
+<mainWidgie>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1,0.4
+            orientation: 'horizontal'
+            Label:
+                pos_hint_y: 0.1
+#                size_hint_y: 0.5
+#                size_hint_x: 0.5
+#                height: self.texture_size[1] 
+#                text_size: self.width, None
+                id: word
+                text: root.question
+                font_size: 35
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1,0.2
+                    id: highscore
+                    text_size: self.size
+                    halign: 'right'
+                    valign: 'top'
+                    text: root.highscore
+                    font_size: 20
+                Label:
+                    id: score
+                    text: root.score
+                    font_size: 35
+        GridLayout:
+            cols: 2
+            Button:
+                on_release:
+                    root.answerLeft(root.answer0)
+                id: answer0
+                text: root.answer0
+                font_size: 35
+            Button:
+                on_release:
+                    root.answerLeft(root.answer1)
+                id: answer1
+                text: root.answer1
+                font_size: 35
+            Button:
+                on_release:
+                    root.answerLeft(root.answer2)
+                id: answer2
+                text: root.answer2
+                font_size: 35
+            Button:
+                on_release:
+                    root.answerLeft(root.answer3)
+                id: answer3
+                text: root.answer3
+                font_size: 35
+            Button:
+                on_release:
+                    root.answerLeft(root.answer4)
+                id: answer4
+                text: root.answer4
+                font_size: 35
+            Button:
+                on_release:
+                    root.answerLeft(root.answer5)
+                id: answer5
+                text: root.answer5
+                font_size: 35

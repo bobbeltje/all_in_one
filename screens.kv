@@ -1,0 +1,64 @@
+#:kivy 1.10.0
+
+<MainMenu>:
+    GridLayout:
+        cols: 2
+        Button:
+            on_release:
+                root.manager.current = 'screen 2'
+            id: button1
+            text: 'Go to screen 2'
+            font_size: 35
+        Button:
+            on_release:
+                root.answerLeft(root.answer1)
+            id: answer1
+            text: root.answer1
+            font_size: 35
+        Button:
+            on_release:
+                root.answerLeft(root.answer2)
+            id: answer2
+            text: root.answer2
+            font_size: 35
+        Button:
+            on_release:
+                root.answerLeft(root.answer3)
+            id: answer3
+            text: root.answer3
+            font_size: 35
+        
+<ScreenTwo>:
+    Button:
+        text: 'On Screen 2 >> Go to Screen 3'
+        on_press: root.manager.current = 'screen3'
+
+<ScreenThree>:
+    Button:
+        text: 'On Screen 3 >> Go to Screen 1'
+        on_press: root.manager.current = 'screen1'
+
+<Manager>:
+    id: screen_manager
+    
+    # before the colon is what it's called in the .py file
+    # inside the class Manager
+    # after the colon is what it's called here
+    screen_one: screen_one
+    screen_two: screen_two
+    screen_three: screen_three
+    
+    ScreenOne:
+        id: screen_one
+        name: 'screen1'
+        manager: screen_manager
+        
+    ScreenTwo:
+        id: screen_two
+        name: 'screen2'
+        manager: screen_manager
+        
+    ScreenThree:
+        id: screen_three
+        name: 'screen3'
+        manager: screen_manager
